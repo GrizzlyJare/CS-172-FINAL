@@ -1,7 +1,7 @@
 //Project: Make a working videogame
 //File: Define the entity and pixel class that are used when displaying the things in the videogame to the screen
 //Last Updated on: 04/16/2017
-//             by: Cameron Rutherford
+//by: Cameron Rutherford
 
 #ifndef ENTITY_
 #define ENTITY_
