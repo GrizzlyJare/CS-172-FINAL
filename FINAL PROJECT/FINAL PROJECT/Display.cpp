@@ -18,8 +18,8 @@ void Display::space_screen()
 
 void Display::populate_screen()
 {
-	for (int ent_count = 0; ent_count < Entities.size(); ent_count++) {
-		for (int pix_count = 0; pix_count < Entities[ent_count]->pixels.size(); pix_count++) {
+	for (unsigned ent_count = 0; ent_count < Entities.size(); ent_count++) {
+		for (unsigned pix_count = 0; pix_count < Entities[ent_count]->pixels.size(); pix_count++) {
 			Pixel this_pix = Entities[ent_count]->pixels.at(pix_count);
 			pixels[this_pix.get_y()][this_pix.get_x()] = this_pix.get_char();
 		}

@@ -2,41 +2,33 @@
 
 Player::Player()
 {
-	Sprite = new Entity;
-	Sprite->pixels.push_back(Pixel(0, 0, '\\'));
-	Sprite->pixels.push_back(Pixel(1, 0, '_'));
-	Sprite->pixels.push_back(Pixel(2, 0, '/'));
-	Sprite->pixels.push_back(Pixel(0, 1, '('));
-	Sprite->pixels.push_back(Pixel(2, 1, ')'));
-	Sprite->pixels.push_back(Pixel(0, 2, '/'));
-	Sprite->pixels.push_back(Pixel(1, 3, '_'));
-	Sprite->pixels.push_back(Pixel(2, 2, '\\'));
+	Sprite = new Entity(1,1);
+	Sprite->pixels.push_back(Pixel(0, 0, '\\', *Sprite));
+	Sprite->pixels.push_back(Pixel(1, 0, '_', *Sprite));
+	Sprite->pixels.push_back(Pixel(2, 0, '/', *Sprite));
+	Sprite->pixels.push_back(Pixel(0, 1, '<', *Sprite));
+	Sprite->pixels.push_back(Pixel(2, 1, '>', *Sprite));
+	Sprite->pixels.push_back(Pixel(0, 2, '/', *Sprite));
+	Sprite->pixels.push_back(Pixel(1, 3, '_', *Sprite));
+	Sprite->pixels.push_back(Pixel(2, 2, '\\', *Sprite));
 }
 
 void Player::up()
 {
-	for (unsigned i = 0; i < Sprite->pixels.size(); i++) {
-		Sprite->pixels[i].set_y(Sprite->pixels[i].get_y() + 1);
-	}
+	Sprite->up();
 }
 
 void Player::down()
 {
-	for (unsigned i = 0; i < Sprite->pixels.size(); i++) {
-		Sprite->pixels[i].set_y(Sprite->pixels[i].get_y() - 1);
-	}
+	Sprite->down();
 }
 
 void Player::left()
 {
-	for (unsigned i = 0; i < Sprite->pixels.size(); i++) {
-		Sprite->pixels[i].set_x(Sprite->pixels[i].get_x() - 1);
-	}
+	Sprite->left();
 }
 
 void Player::right()
 {
-	for (unsigned i = 0; i < Sprite->pixels.size(); i++) {
-		Sprite->pixels[i].set_x(Sprite->pixels[i].get_x() + 1);
-	}
+	Sprite->right();
 }
