@@ -13,7 +13,7 @@ int main() {
 	Player p1;
 	Screen.Entities.push_back(p1.getSprite());
 	Screen.print();
-
+	int x = 0;
 	int c = 0;
 	ShowConsoleCursor(false);
 	while (1)
